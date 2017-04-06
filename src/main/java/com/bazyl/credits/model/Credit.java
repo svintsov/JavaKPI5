@@ -9,7 +9,7 @@ import java.util.Currency;
 import java.util.GregorianCalendar;
 
 public class Credit {
-    public static int freeID = 0;
+    public static int freeID=0;
 
     private Currency currency;
     private GregorianCalendar expirationDate;
@@ -21,7 +21,7 @@ public class Credit {
 
     public Credit() {
         registrationDate = new GregorianCalendar();
-        this.id = freeID;
+        this.id=freeID;
         freeID++;
     }
 
@@ -33,8 +33,8 @@ public class Credit {
         this.percentage = percentage;
     }
 
-    public void increaseDebt(BigDecimal delta) {
-        debt = debt.add(delta);
+    public void increaseDebt(BigDecimal delta){
+        debt.add(delta);
     }
 
     public BigDecimal getDebt() {

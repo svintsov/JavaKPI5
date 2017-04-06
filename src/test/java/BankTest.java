@@ -68,7 +68,6 @@ public class BankTest {
         bank1.addCredit(credit2);
         console.showBank(bank1);
         credit1.increaseDebt(new BigDecimal(666));
-        bank1.sortCredits();
         console.showBank(bank1);
     }
 
