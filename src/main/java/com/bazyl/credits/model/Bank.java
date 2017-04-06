@@ -7,7 +7,6 @@ import java.util.TreeSet;
 
 public class Bank {
     class DebtComparator implements Comparator<Credit> {
-
         @Override
         public int compare(Credit c1, Credit c2) {
             return c1.getDebt().compareTo(c2.getDebt());
@@ -24,6 +23,10 @@ public class Bank {
         this.id = freeID;
         freeID++;
         credits = new TreeSet<>(new DebtComparator());
+    }
+
+    public void setCredits(Set<Credit> credits) {
+        this.credits = credits;
     }
 
     public void addCredit(Credit credit) {

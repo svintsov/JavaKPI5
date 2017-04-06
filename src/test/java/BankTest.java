@@ -1,3 +1,4 @@
+import com.bazyl.credits.controller.DBController;
 import com.bazyl.credits.model.Bank;
 import com.bazyl.credits.model.Credit;
 import com.bazyl.credits.view.Console;
@@ -69,6 +70,27 @@ public class BankTest {
         credit1.increaseDebt(new BigDecimal(666));
         bank1.sortCredits();
         console.showBank(bank1);
+    }
+
+    @Test
+    public void DBTest1() {
+        DBController controller = new DBController();
+        bank1.setCredits(controller.retreiveAllCredits());
+        console.showBank(bank1);
+    }
+
+    @Test
+    public void DBTest2() {
+        DBController controller = new DBController();
+        bank1.setCredits(controller.retreiveAllCredits());
+        controller.closeCredit(1);
+        //console.showBank(bank1);
+    }
+
+    @Test
+    public void DBTest3() {
+        DBController controller = new DBController();
+        controller.increaseDebt(new BigDecimal(999), 2);
     }
 
 }
